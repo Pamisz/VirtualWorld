@@ -10,7 +10,7 @@ public:
     {
         setSila(10);
     }
-    void rysowanie() override;
+    char rysowanie() override;
     ~barszczSosnowskiego() override;
 };
 

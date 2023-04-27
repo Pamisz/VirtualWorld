@@ -2,7 +2,7 @@
 #include "organizm.h"
 
 void organizmy::createNode(organizm* node) {
-	if (!front) {
+	if (front == nullptr) {
 		front = node;
 		back = node;
 	}

@@ -127,29 +127,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="antylopa.h" />
     <ClInclude Include="barszczSosnowskiego.h" />
+    <ClInclude Include="cyberOwca.h" />
+    <ClInclude Include="Czlowiek.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="guarana.h" />
+    <ClInclude Include="lis.h" />
     <ClInclude Include="mlecz.h" />
     <ClInclude Include="organizm.h" />
     <ClInclude Include="organizmy.h" />
+    <ClInclude Include="owca.h" />
     <ClInclude Include="roslina.h" />
     <ClInclude Include="swiat.h" />
     <ClInclude Include="trawa.h" />
     <ClInclude Include="wilczeJagody.h" />
+    <ClInclude Include="wilk.h" />
+    <ClInclude Include="zolw.h" />
+    <ClInclude Include="zwierze.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="antylopa.cpp" />
     <ClCompile Include="barszczSosnowskiego.cpp" />
+    <ClCompile Include="cyberOwca.cpp" />
+    <ClCompile Include="Czlowiek.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="guarana.cpp" />
+    <ClCompile Include="lis.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="mlecz.cpp" />
     <ClCompile Include="organizm.cpp" />
     <ClCompile Include="organizmy.cpp" />
+    <ClCompile Include="owca.cpp" />
     <ClCompile Include="roslina.cpp" />
     <ClCompile Include="swiat.cpp" />
     <ClCompile Include="trawa.cpp" />
     <ClCompile Include="wilczeJagody.cpp" />
+    <ClCompile Include="wilk.cpp" />
+    <ClCompile Include="zolw.cpp" />
+    <ClCompile Include="zwierze.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

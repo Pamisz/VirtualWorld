@@ -10,7 +10,7 @@ public:
     {
         setSila(99);
     }
-    void rysowanie() override {};
+    char rysowanie() override;
     ~wilczeJagody() {};
 };
 

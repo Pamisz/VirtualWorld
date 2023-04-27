@@ -24,7 +24,7 @@ char intToChar(int x) {
 }
 
 void legend(swiat* s) {
-    int x = 2 * s->getWidth() + 10;
+    int x = 2 * s->getWidth() + 6;
     int y = 1;
     color(BLUE);
     gotoxy(x, y);
@@ -45,6 +45,56 @@ void legend(swiat* s) {
     cout << "-Mlecz                "; color(YELLOW); cout << intToChar(219); color(WHITE); nextLine(x, y);
     cout << "-Trawa                "; color(LIGHT_GREEN); cout << intToChar(219); color(WHITE); nextLine(x, y);
     nextLine(x, y);
-    cout << ">Czlowiek             " << intToChar(219);
+    cout << ">Czlowiek             " << 'C';
+}
+
+void info(swiat* s) {
+    int x = 2 * s->getWidth() + 32;
+    int y = 1;
+    color(BLUE);
+    gotoxy(x, y);
+    cout << "INFO:"; nextLine(x, y); color(WHITE);
+    int meter = 0;
+    while (meter != 10) {
+        cout << s->getNotifications(meter);
+        nextLine(x, y);
+        meter++;
+    }
+}
+
+void interfejs(swiat* s) {
+    int x = 2 * s->getWidth() + 18;
+    int y = 20;
+    color(BLUE);
+    gotoxy(x, y);
+    cout << "Patryk Miszke 193249"; color(WHITE);
+}
+
+void texts(swiat* s) {
+    legend(s);
+    info(s);
+    interfejs(s);
+}
+
+string whichArrow() {
+    string key = "";
+        short key1 = GetAsyncKeyState(VK_LEFT);
+        short key2 = GetAsyncKeyState(VK_RIGHT);
+        short key3 = GetAsyncKeyState(VK_UP);
+        short key4 = GetAsyncKeyState(VK_DOWN);
+
+        if (key1 < 0) {
+            key = "LEWO";
+        }
+        if (key2 < 0) {
+            key = "PRAWO";
+        }
+        if (key3 < 0) {
+            key = "GORA";
+        }
+        if (key4 < 0) {
+            key = "DOL";
+        }
+    return key;
 }
 

@@ -1,5 +1,4 @@
 #include "roslina.h"
-#include "organizm.h"
 #include "organizmy.h"
 #include "barszczSosnowskiego.h"
 #include "wilczeJagody.h"

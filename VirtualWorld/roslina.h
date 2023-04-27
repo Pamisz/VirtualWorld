@@ -16,7 +16,7 @@ public:
     }
     void akcja() override;
     void kolizja(organizm* org) override;
-    void rysowanie() override = 0;
+    char rysowanie() override = 0;
 };
 
 

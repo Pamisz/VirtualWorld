@@ -10,7 +10,7 @@ public:
     {
         setSila(0);
     }
-    void rysowanie() override {};
+    char rysowanie() override;
     ~trawa() {};
 };
 

@@ -5,9 +5,14 @@ int main() {
 	swiat world;
 	world.createSwiat();
 	world.rysujSwiat();
-	legend(&world);
-	while (true)
-		;
+	texts(&world);
+	while (true) {
+		world.wykonajTure();
+		system("cls");
+		world.rysujSwiat();
+		texts(&world);
+		Sleep(1000);
+	}
 	world.destroySwiat();
 	return 0;
 }

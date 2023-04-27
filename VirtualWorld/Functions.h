@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <windows.h>
+#include <string.h>
 using namespace std;
 
 #define BLACK 0
@@ -27,6 +28,10 @@ void color(int c);
 void gotoxy(int x, int y);
 char intToChar(int x);
 void legend(swiat* s);
+void info(swiat* s);
+void interfejs(swiat* s);
+void texts(swiat* s);
+string whichArrow();
 
 
 

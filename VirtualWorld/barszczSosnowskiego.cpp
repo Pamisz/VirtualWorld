@@ -1,7 +1,9 @@
 #include "barszczSosnowskiego.h"
+#include "Functions.h"
 
-void barszczSosnowskiego::rysowanie() {
-	;
+char barszczSosnowskiego::rysowanie() {
+	color(RED);
+	return intToChar(219);
 }
 
 barszczSosnowskiego::~barszczSosnowskiego() {

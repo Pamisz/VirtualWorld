@@ -33,6 +33,6 @@ public:
 	organizm(swiat* s);
 	virtual void akcja() = 0;
 	virtual void kolizja(organizm* org) = 0;
-	virtual void rysowanie() = 0;
+	virtual char rysowanie() = 0;
 	virtual ~organizm() = default;
 };

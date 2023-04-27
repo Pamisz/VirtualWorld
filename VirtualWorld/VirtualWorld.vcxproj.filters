@@ -63,9 +63,6 @@
     <ClInclude Include="antylopa.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="cyberOwca.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="Czlowiek.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
@@ -120,9 +117,6 @@
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="antylopa.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="cyberOwca.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="Czlowiek.cpp">

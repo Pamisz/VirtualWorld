@@ -10,6 +10,12 @@ public:
     {
         setInicjatywa(5);
         setSila(9);
+        string txt = "Urodzil sie wilk";
+        s->setNotifications(txt);
     }
     char rysowanie() override;
+    ~wilk() {
+        string txt = "Wilk umarl";
+        getSwiat()->setNotifications(txt);
+    }
 };

@@ -27,6 +27,7 @@ int organizm::getInicjatywa() const {
 }
 
 int organizm::getSila() const {
+	if(this != nullptr)
 	return sila; 
 }
 	//Settery
@@ -60,20 +61,20 @@ void organizm::setSila(int s) {
 
 pair<int, int> organizm::czyPustePole() {
 	string pola = "";
-	if (s->getBoard()[polozenie[0]][polozenie[1] + 1] == ' ') {
+	if (polozenie[1] <= s->getHeight() + 1 && s->getBoard()[polozenie[0]][polozenie[1] + 1] == ' ') {
 		pola += '1';
 	}
-	if (s->getBoard()[polozenie[0]][polozenie[1] - 1] == ' ') {
+	if (polozenie[1] > 0 && s->getBoard()[polozenie[0]][polozenie[1] - 1] == ' ') {
 		pola += '2';
 	}
-	if (s->getBoard()[polozenie[0] + 1][polozenie[1]] == ' ') {
+	if (polozenie[0] < s->getWidth() + 1 && s->getBoard()[polozenie[0] + 1][polozenie[1]] == ' ') {
 		pola += '3';
 	}
-	if (s->getBoard()[polozenie[0] - 1][polozenie[1]] == ' ') {
+	if (polozenie[0] > 0 && s->getBoard()[polozenie[0] - 1][polozenie[1]] == ' ') {
 		pola += '4';
 	}
 	if (pola.length() > 0) {
-		int los = rand() % pola.length() + 1;
+		int los = rand() % pola.length();
 		if (pola[los] == '1') return { polozenie[0], polozenie[1] + 1 };
 		else if (pola[los] == '2') return { polozenie[0], polozenie[1] - 1 };
 		else if (pola[los] == '3') return { polozenie[0] + 1, polozenie[1] };

@@ -129,7 +129,6 @@
   <ItemGroup>
     <ClInclude Include="antylopa.h" />
     <ClInclude Include="barszczSosnowskiego.h" />
-    <ClInclude Include="cyberOwca.h" />
     <ClInclude Include="Czlowiek.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="guarana.h" />
@@ -149,7 +148,6 @@
   <ItemGroup>
     <ClCompile Include="antylopa.cpp" />
     <ClCompile Include="barszczSosnowskiego.cpp" />
-    <ClCompile Include="cyberOwca.cpp" />
     <ClCompile Include="Czlowiek.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="guarana.cpp" />

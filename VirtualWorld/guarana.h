@@ -9,9 +9,15 @@ public:
         : roslina(X, Y, s)
     {
         setSila(0);
+        string txt = "Guarana zostala rozpylona";
+        s->setNotifications(txt);
     }
+    void kolizja(organizm* org) override;
     char rysowanie() override;
-    ~guarana() {};
+    ~guarana() {
+        string txt = "Guarana umarla";
+        getSwiat()->setNotifications(txt);
+    }
 };
 
 

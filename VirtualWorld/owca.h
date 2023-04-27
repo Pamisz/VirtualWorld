@@ -10,7 +10,13 @@ public:
     {
         setInicjatywa(4);
         setSila(4);
+        string txt = "Urodzila sie owca";
+        s->setNotifications(txt);
     }
     char rysowanie() override;
+    ~owca() {
+        string txt = "Owca umarla";
+        getSwiat()->setNotifications(txt);
+    }
 };
 

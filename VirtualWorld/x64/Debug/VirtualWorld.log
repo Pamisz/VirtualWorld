@@ -1,3 +1,5 @@
-﻿  swiat.cpp
-C:\Users\Wazowski\OneDrive\Pulpit\Programowanie\Projekty\VirtualWorld\swiat.cpp(61,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+﻿  antylopa.cpp
+  lis.cpp
+  zolw.cpp
+  Generowanie kodu...
   VirtualWorld.vcxproj -> C:\Users\Wazowski\OneDrive\Pulpit\Programowanie\Projekty\VirtualWorld\x64\Debug\VirtualWorld.exe

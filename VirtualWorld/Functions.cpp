@@ -67,7 +67,10 @@ void interfejs(swiat* s) {
     int y = 20;
     color(BLUE);
     gotoxy(x, y);
-    cout << "Patryk Miszke 193249"; color(WHITE);
+    cout << "Patryk Miszke 193249"; 
+    nextLine(x, y);
+    cout << "Tura: " << s->getTura();
+    color(WHITE);
 }
 
 void texts(swiat* s) {

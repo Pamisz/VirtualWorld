@@ -5,24 +5,25 @@
 #include "lis.h"
 #include "zolw.h"
 #include "antylopa.h"
-#include "cyberOwca.h"
 
 void zwierze::akcja() {
-    {
         int liczba = rand() % 4 + 1;
         if (liczba == 1) {
+            if(getSwiat()->getBoard()[getPolozenieY() + 1][getPolozenieX()] != '#')
             setPolozenieY(getPolozenieY() + 1);
         }
         else if (liczba == 2) {
+            if (getSwiat()->getBoard()[getPolozenieY() - 1][getPolozenieX()] != '#')
             setPolozenieY(getPolozenieY() - 1);
         }
         else if (liczba == 3) {
+            if (getSwiat()->getBoard()[getPolozenieY()][getPolozenieX()+1] != '#')
             setPolozenieX(getPolozenieX() + 1);
         }
         else if (liczba == 4) {
+            if (getSwiat()->getBoard()[getPolozenieY()][getPolozenieX()-1] != '#')
             setPolozenieX(getPolozenieX() - 1);
         }
-    }
 }
 
 void zwierze::kolizja(organizm* org) {
@@ -50,10 +51,14 @@ void zwierze::kolizja(organizm* org) {
                     antylopa* z = new antylopa(elo.first, elo.second, getSwiat());
                     getSwiat()->getOrganizmy()->createNode(z);
                 }
-                if (typeid(*this) == typeid(cyberOwca)) {
-                    cyberOwca* z = new cyberOwca(elo.first, elo.second, getSwiat());
-                    getSwiat()->getOrganizmy()->createNode(z);
-                }
+            }
+        }
+        else {
+            if (org->getSila() > getSila()) {
+                getSwiat()->getOrganizmy()->deleteNode(this);
+            }
+            else {
+                org->getSwiat()->getOrganizmy()->deleteNode(org);
             }
         }
     }

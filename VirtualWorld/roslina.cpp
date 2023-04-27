@@ -7,8 +7,8 @@
 #include "trawa.h"
 
 void roslina::akcja() {
-    int liczba = rand() % 4 + 1;
-    if (liczba != 2) {
+    int liczba = rand() % 20 + 1;
+    if (liczba == 2) {
         auto elo = czyPustePole();
         if (elo.first != -1) {
             if (typeid(*this) == typeid(barszczSosnowskiego)) {
@@ -39,6 +39,3 @@ void roslina::akcja() {
     }
 }
 
-void roslina::kolizja(organizm* org) {
-    ;
-}

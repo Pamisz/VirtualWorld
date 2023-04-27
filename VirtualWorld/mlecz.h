@@ -9,9 +9,16 @@ public:
         : roslina(X, Y, s)
     {
         setSila(0);
+        string txt = "Mlecz zostal rozpylony";
+        s->setNotifications(txt);
     }
+    void akcja() override;
+    void kolizja(organizm* org) {};
     char rysowanie() override;
-    ~mlecz() {};
+    ~mlecz() {
+        string txt = "Mlecz umarl";
+        getSwiat()->setNotifications(txt);
+    }
 };
 
 

@@ -15,7 +15,7 @@ public:
         setSwiat(s);
     }
     void akcja() override;
-    void kolizja(organizm* org) override;
+    void kolizja(organizm* org) override = 0;
     char rysowanie() override = 0;
 };
 

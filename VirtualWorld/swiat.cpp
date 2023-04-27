@@ -1,13 +1,13 @@
 #include "swiat.h"
 #include "Functions.h"
 #include "organizmy.h"
+#include "organizm.h"
 #include "czlowiek.h"
 #include "wilk.h"
 #include "owca.h"
 #include "lis.h"
 #include "zolw.h"
 #include "antylopa.h"
-#include "cyberOwca.h"
 #include "trawa.h"
 #include "mlecz.h"
 #include "guarana.h"
@@ -39,19 +39,19 @@ void swiat::setPersonAlive(bool b) {
 void swiat::rysujSwiat() {
 	for (int i = 0; i < height + 2; i++) {
 		for (int j = 0; j < width + 2; j++) {
-			if (board[i][j] !=  ' ' && board[i][j] != '#') {
-				organizm* ogm = org->getFront();
-				while (ogm->getPrev() != nullptr && (ogm->getPolozenieX() != j || ogm->getPolozenieY() != i)) {
-					ogm = ogm->getPrev();
-				}
+			organizm* ogm = org->getFront();
+			while (ogm->getPrev() != nullptr && (ogm->getPolozenieX() != j || ogm->getPolozenieY() != i)) {
+				ogm = ogm->getPrev();
+			}
+			if(ogm->getPolozenieX() == j && ogm->getPolozenieY() == i) {
 				cout << ogm->rysowanie() << ' ';
 				color(WHITE);
-				ogm = nullptr;
-				delete ogm;
 			}
 			else {
 				cout << board[i][j] << ' ';
 			}
+			ogm = nullptr;
+			delete ogm;
 		}
 		cout << endl;
 	}
@@ -116,36 +116,30 @@ void swiat::createSwiat() {
 							delete a;
 						}
 						else if (liczba == 7) {
-							cyberOwca* c = new cyberOwca(j, i, this);
-							org->createNode(c);
-							c = nullptr;
-							delete c;
-						}
-						else if (liczba == 8) {
 							trawa* t = new trawa(j, i, this);
 							org->createNode(t);
 							t = nullptr;
 							delete t;
 						}
-						else if (liczba == 9) {
+						else if (liczba == 8) {
 							mlecz* m = new mlecz(j, i, this);
 							org->createNode(m);
 							m = nullptr;
 							delete m;
 						}
-						else if (liczba == 10) {
+						else if (liczba == 9) {
 							guarana* g = new guarana(j, i, this);
 							org->createNode(g);
 							g = nullptr;
 							delete g;
 						}
-						else if (liczba == 11) {
+						else if (liczba == 10) {
 							wilczeJagody* wj = new wilczeJagody(j, i, this);
 							org->createNode(wj);
 							wj = nullptr;
 							delete wj;
 						}
-						else if (liczba == 12) {
+						else if (liczba == 11) {
 							barszczSosnowskiego* b = new barszczSosnowskiego(j, i, this);
 							org->createNode(b);
 							b = nullptr;
@@ -170,18 +164,31 @@ void swiat::destroySwiat() {
 }
 
 void swiat::wykonajTure() {
+	tura++;
+	
 	if (personAlive == true) {
 		organizm* buffer = org->getFront();
 		while (typeid(*buffer) != typeid(czlowiek) && buffer->getPrev() != nullptr) {
 			buffer = buffer->getPrev();
 		}
 		while (personNextMove == "") {
-			 setNextMove();
-			 buffer->akcja();
+			setNextMove();
+			buffer->akcja();
 		}
 		personNextMove = "";
 		buffer = nullptr;
 		delete buffer;
+	}
+
+	organizm* buff = org->getFront();
+	while (buff != nullptr) {
+		buff->akcja();
+		if (buff->getPrev() != nullptr) {
+			buff = buff->getPrev();
+		}
+		else {
+			break;
+		}
 	}
 }
 
@@ -224,5 +231,23 @@ void swiat::setNotifications(string n) {
 		meter = 0;
 	}
 	notifications[meter] = n;
+}
+
+int swiat::getTura() const {
+	return tura;
+}
+
+organizm* swiat::getOrganizm(int x, int y) {
+	organizm* buffer = org->getFront();
+	if (buffer->getPolozenieX() == x && buffer->getPolozenieY() == y) {
+		return buffer;
+	}
+	while (!buffer->getPrev()) {
+		buffer = buffer->getPrev();
+		if (!buffer && (buffer->getPolozenieX() == x && buffer->getPolozenieY() == y)) {
+			return buffer;
+		}
+	}
+	return nullptr;
 }
 

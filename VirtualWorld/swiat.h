@@ -2,6 +2,7 @@
 #include <string.h>
 #include <iostream>
 class organizmy;
+class organizm;
 
 
 class swiat {
@@ -13,6 +14,7 @@ private:
 	bool personAlive = false;
 	std::string personNextMove = "";
 	std::string notifications[10];
+	int tura = 0;
 public:
 	void rysujSwiat();
 	void createSwiat();
@@ -28,4 +30,6 @@ public:
 	std::string getNextMove();
 	std::string getNotifications(int x);
 	void setNotifications(std::string n);
+	int getTura() const;
+	organizm* getOrganizm(int x, int y);
 };

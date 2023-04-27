@@ -1,7 +1,6 @@
 #include "Czlowiek.h"
 #include "Functions.h"
-#include "antylopa.h"
-#include "guarana.h"
+#include "organizmy.h"
 
 void czlowiek::akcja() {
 	if (getSwiat()->getNextMove() == "GORA" && getSwiat()->getBoard()[getPolozenieY() - 1][getPolozenieX()] != '#') {
@@ -28,14 +27,12 @@ void czlowiek::akcja() {
 
 void czlowiek::kolizja(organizm* org) {
 	if (holocaust || org->getSila() <= getSila()) {
-		//czlowiek zabija
-		if (typeid(*org) == typeid(guarana)); //sila +3
+		getSwiat()->getOrganizmy()->deleteNode(org);
+		getSwiat()->setNotifications("Czlowiek zabil organizm!");
 	}
 	else {
-		if (typeid(*org) == typeid(antylopa)) {
-			//antylopa kolizja
-		}
-		
+		getSwiat()->getOrganizmy()->deleteNode(this);
+		getSwiat()->setPersonAlive(false);
 	}
 }
 
